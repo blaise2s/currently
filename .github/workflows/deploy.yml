@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      PUBLIC_URL: https://blaise2s.github.io/currently
+      PUBLIC_URL: https://blaise2s.github.io/currently/
 
     steps:
       - name: Checkout Code
