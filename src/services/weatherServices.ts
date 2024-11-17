@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import { OPEN_WEATHER_MAP_API_KEY } from '../config';
 
 interface Coordinates {
   lon: number;

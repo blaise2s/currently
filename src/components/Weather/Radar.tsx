@@ -2,7 +2,6 @@ import { Box } from '@mui/material';
 import mapboxgl, { Map, Marker } from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useEffect, useRef } from 'react';
-// import { MAPBOX_API_KEY, OPEN_WEATHER_MAP_API_KEY } from '../../config';
 import { Location } from '../../services/locationServices';
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_API_KEY || '';

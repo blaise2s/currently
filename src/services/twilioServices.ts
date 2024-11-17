@@ -1,6 +1,5 @@
 import axios from 'axios';
 import FormData from 'form-data';
-// import { TWILIO_SID, TWILIO_TOKEN, TWILIO_FROM } from '../config';
 
 export const sendSMS = (to: string, message: string) => {
   const form = new FormData();

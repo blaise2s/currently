@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import { LOCATION_IQ_API_KEY } from '../config';
 
 export interface Coordinates {
   latitude: number;
