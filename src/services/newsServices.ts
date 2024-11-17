@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { NEWS_API_KEY } from '../config';
+// import { NEWS_API_KEY } from '../config';
 
 interface ArticleSource {
   id: string;
@@ -46,7 +46,7 @@ export const getHeadlines = async (params?: GetHeadlineParams) => {
     .get<HeadlinesResponse>('https://newsapi.org/v2/top-headlines', {
       params: {
         country: 'us',
-        apiKey: NEWS_API_KEY,
+        apiKey: import.meta.env.VITE_NEWS_API_KEY || '',
         ...(params && params),
       },
     })

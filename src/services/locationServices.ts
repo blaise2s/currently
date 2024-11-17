@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LOCATION_IQ_API_KEY } from '../config';
+// import { LOCATION_IQ_API_KEY } from '../config';
 
 export interface Coordinates {
   latitude: number;
@@ -50,7 +50,7 @@ export const getLocationFromCoordinates = async (
   return axios
     .get<LocationResponse>('https://us1.locationiq.com/v1/reverse', {
       params: {
-        key: LOCATION_IQ_API_KEY,
+        key: import.meta.env.VITE_LOCATION_IQ_API_KEY || '',
         format: 'json',
         lat: coordinates.latitude,
         lon: coordinates.longitude,
@@ -73,7 +73,7 @@ export const getLocationsFromQuery = async (
   return axios
     .get<LocationResponse[]>('https://us1.locationiq.com/v1/search', {
       params: {
-        key: LOCATION_IQ_API_KEY,
+        key: import.meta.env.VITE_LOCATION_IQ_API_KEY || '',
         format: 'json',
         normalizeaddress: 1,
         q: query,

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { OPEN_WEATHER_MAP_API_KEY } from '../config';
+// import { OPEN_WEATHER_MAP_API_KEY } from '../config';
 
 interface Coordinates {
   lon: number;
@@ -64,7 +64,7 @@ export const getWeather = async (
   return axios
     .get<WeatherData>('https://api.openweathermap.org/data/2.5/weather', {
       params: {
-        appid: OPEN_WEATHER_MAP_API_KEY,
+        appid: import.meta.env.VITE_OPEN_WEATHER_MAP_API_KEY || '',
         units: 'imperial',
         lat: latitude,
         lon: longitude,

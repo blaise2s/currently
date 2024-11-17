@@ -2,10 +2,10 @@ import { Box } from '@mui/material';
 import mapboxgl, { Map, Marker } from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useEffect, useRef } from 'react';
-import { MAPBOX_API_KEY, OPEN_WEATHER_MAP_API_KEY } from '../../config';
+// import { MAPBOX_API_KEY, OPEN_WEATHER_MAP_API_KEY } from '../../config';
 import { Location } from '../../services/locationServices';
 
-mapboxgl.accessToken = MAPBOX_API_KEY;
+mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_API_KEY || '';
 
 type RadarProps = {
   location?: Location;
@@ -46,7 +46,7 @@ export const Radar = ({ location, initialZoom = 9 }: RadarProps) => {
       mapRef.current.addSource('radar-source', {
         type: 'raster',
         tiles: [
-          `https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=${OPEN_WEATHER_MAP_API_KEY}`,
+          `https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=${import.meta.env.VITE_OPEN_WEATHER_MAP_API_KEY || ''}`,
         ],
         tileSize: 256,
       });
