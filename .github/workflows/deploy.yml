@@ -14,6 +14,13 @@ jobs:
 
     env:
       PUBLIC_URL: https://blaise2s.github.io/currently/
+      VITE_LOCATION_IQ_API_KEY: ${{ secrets.VITE_LOCATION_IQ_API_KEY }}
+      VITE_OPEN_WEATHER_MAP_API_KEY: ${{ secrets.VITE_OPEN_WEATHER_MAP_API_KEY }}
+      VITE_NEWS_API_KEY: ${{ secrets.VITE_NEWS_API_KEY }}
+      VITE_MAPBOX_API_KEY: ${{ secrets.VITE_MAPBOX_API_KEY }}
+      VITE_TWILIO_SID: ${{ secrets.VITE_TWILIO_SID }}
+      VITE_TWILIO_TOKEN: ${{ secrets.VITE_TWILIO_TOKEN }}
+      VITE_TWILIO_FROM: ${{ secrets.VITE_TWILIO_FROM }}
 
     steps:
       - name: Checkout Code
